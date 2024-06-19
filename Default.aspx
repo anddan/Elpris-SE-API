@@ -15,10 +15,10 @@
             <section class="col-md-6" aria-labelledby="librariesTitle">
                 <h2 id="librariesTitle"><i class="fa fa-cloud"></i>Rest API</h2>
                 <p>
-                    Ett REST API (Representational State Transfer Application Programming Interface) är ett sätt för olika system att kommunicera med varandra över internet med hjälp av HTTP och JSON. Testa det här: <a href="/api/restapi">Hello world »</a>
+                    Ett REST API (Representational State Transfer Application Programming Interface) är ett sätt för olika system att kommunicera med varandra över internet med hjälp av HTTP och JSON.<%-- Testa det här: <a href="/api/restapi">Hello world »</a>--%>
                     <br />
                 </p>
-                <h3><i class="fa fa-plug"></i>Anropa API för Elpriser</h3>
+                <h3><i class="fa fa-plug"></i>Anropa Rest API för Elpriser</h3>
                 <p>
                     Här kan du anropa eller skapa egna API-anrop för att se elpriser dagligen inom de olika prisklasserna. Vid varje API-anrop genereras automatiskt statistik och diagram baserat på den hämtade datan. <i class="fa fa-line-chart"></i>
                 </p>
@@ -30,10 +30,10 @@
                 <h2 id="gettingStartedTitle"><i class="fa fa-cogs"></i>API - SOAP 1.2</h2>
                 <p>
                     SOAP API är ett protokoll för att kommunicera och överföra data mellan olika applikationer via internet, användande XML-baserade meddelanden.
-                    <br />
-                    Testa: <a href="/Controllers/Api/Soap.asmx?op=HelloWorld">Hello world &raquo;</a>
+                    <%--<br />
+                    Testa: <a href="/Controllers/Api/Soap.asmx?op=HelloWorld">Hello world &raquo;</a>--%>
                 </p>
-                <h3><i class="fa fa-plug"></i>Anropa API för Elpriser</h3>
+                <h3><i class="fa fa-plug"></i>Anropa Soap API för Elpriser</h3>
                 <p>
                     Här kan du anropa funktionerna GetByDateAndCoordinates & GetByDateAndPriceClass och få resultatet i XML-format.
                 </p>

@@ -97,7 +97,7 @@ namespace Elpris
             {
                 if (DateTime.TryParse(inputStartDate.Value, out dstartDate) && DateTime.TryParse(inputEndDate.Value, out dendDate))
                 {
-                    if (dendDate <= DateTime.Now)
+                    if (dendDate <= DateTime.Now && dstartDate <= dendDate)
                     {
                         for (DateTime date = (DateTime)dstartDate; date <= (DateTime)dendDate; date = date.AddDays(1))
                         {
@@ -140,8 +140,6 @@ namespace Elpris
                                     prices.Add($"{date.ToString("MMM dd")}", dailyAverageSEK);
 
                             }).Wait(); // Vänta på att uppgiften ska slutföras
-
-
                         }
                         double averageSEK = totalSEK / totalCount;
                         // Lägg till statistik för dagen i början av resultatet
@@ -157,7 +155,7 @@ namespace Elpris
                         lblAPIResult.Text = result;
                     }
                     else
-                        lblAPIResult.Text = "Du kan inte ange datum som är större än dagens datum!";
+                        lblAPIResult.Text = @"<i class=""fa fa-warning""></i>Fel angivet datum!";
                 }
                 else
                     lblAPIResult.Text = "Vänligen ange giltiga datum!";
@@ -199,6 +197,7 @@ namespace Elpris
             lblStats.Visible = false;
             line_chart_div.Visible = false;
             lblMessage.Text = string.Empty;
+            lblAPIResult.Text = string.Empty;
         }
     }
 }
