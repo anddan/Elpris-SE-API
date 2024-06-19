@@ -30,7 +30,7 @@ namespace Elpris
         public string GetChartData()
         {
             StringBuilder sb = new StringBuilder();
-            if(hourlyData)
+            if (hourlyData)
                 sb.Append("['Timme', 'Pris'], ");
             else
                 sb.Append("['Dag', 'Avg pris'], ");
@@ -45,6 +45,7 @@ namespace Elpris
         }
         protected void btnGenerateAPICalls_Click(object sender, EventArgs e)
         {
+            ClearForm();
             string result = string.Empty;
             DateTime dstartDate;
             DateTime dendDate;
@@ -72,12 +73,14 @@ namespace Elpris
                 result = "Vänligen ange en prisklass";
 
             line_chart_div.Visible = false;
+            lblStats.Visible = false;
             lblAPIResult.Visible = true;
             lblAPIResult.Text = result;
         }
 
         protected void btnExecute_Click(object sender, EventArgs e)
         {
+            ClearForm();
             var service = new ElprisJson();
             string result = string.Empty;
             string stats = string.Empty;
@@ -138,7 +141,7 @@ namespace Elpris
 
                             }).Wait(); // Vänta på att uppgiften ska slutföras
 
-                            
+
                         }
                         double averageSEK = totalSEK / totalCount;
                         // Lägg till statistik för dagen i början av resultatet
@@ -149,6 +152,7 @@ namespace Elpris
                                          $"Total prices fetched: <b>{totalCount}</b><br/></div>";
 
                         line_chart_div.Visible = true;
+                        lblStats.Visible = true;
                         lblStats.Text = stats;
                         lblAPIResult.Text = result;
                     }
@@ -162,12 +166,12 @@ namespace Elpris
             else
                 lblAPIResult.Text = "Vänligen ange en prisklass!";
 
-         
             lblAPIResult.Visible = true;
         }
 
         protected void btnGetPriceClass_Click(object sender, EventArgs e)
         {
+            ClearForm();
             if (inputLongitude.Value != "" && inputLatitud.Value != "")
             {
                 GeoPolygonen geoPolygonen = new GeoPolygonen();
@@ -179,10 +183,22 @@ namespace Elpris
                     ddlPriceClass.Items.FindByValue(prisklass).Selected = true;
                 }
                 else
+                {
                     ddlPriceClass.ClearSelection();
+                    lblMessage.Text = @"<i class=""fa fa-warning""></i>Kunde inte hitta någon prisklass utifrån dina koordinater";
+                }
             }
             else
+            {
                 ddlPriceClass.ClearSelection();
+                lblMessage.Text = @"<i class=""fa fa-warning""></i>Kunde inte hitta någon prisklass utifrån dina koordinater";
+            }
+        }
+        private void ClearForm()
+        {
+            lblStats.Visible = false;
+            line_chart_div.Visible = false;
+            lblMessage.Text = string.Empty;
         }
     }
 }

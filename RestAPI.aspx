@@ -94,8 +94,7 @@
     <div class="container mt-5">
         <div class="row m-1">
             <section class="col-md-3" aria-labelledby="librariesTitle">
-
-                <h3>Utför/Generera API anrop</h3>
+                <h3>Skapa API anrop</h3>
                 <div class="form-group">
                     <label for="startDate">Från datum:</label>
                     <input type="date" runat="server" class="form-control" id="inputStartDate" name="startDate">
@@ -113,8 +112,9 @@
                         <asp:ListItem Value="SE3">SE3 - Stockholm / Södra Mellansverige</asp:ListItem>
                         <asp:ListItem Value="SE4">SE4 - Malmö / Södra Sverige</asp:ListItem>
                     </asp:DropDownList>
+                    <asp:Label ID="lblMessage" runat="server"></asp:Label>
                 </div>
-                <div class="form-group mt-2">
+                <div class="form-group mt-4">
                     <asp:Button ID="btnGenerateAPICalls" CssClass="btn btn-secondary" runat="server" OnClick="btnGenerateAPICalls_Click" Text="Generara API anrop" />
                     <asp:Button ID="btnExecute" CssClass="btn btn-primary" runat="server" OnClick="btnExecute_Click" Text="Anropa API" />
                 </div>
@@ -122,7 +122,7 @@
             <section class="col-md-3" aria-labelledby="librariesTitle">
                 <asp:Label ID="lblStats" runat="server"></asp:Label>
             </section>
-            <section class="col-md-6" aria-labelledby="librariesTitle">
+            <section class="col-md-6 p-0 m-0" aria-labelledby="librariesTitle">
                 <asp:Panel id="line_chart_div" runat="server" style="width:100%;" Visible="false"></asp:Panel>
             </section>
             <div class="form-group mt-2">
