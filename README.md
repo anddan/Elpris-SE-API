@@ -17,3 +17,5 @@ Dependencies, you can find them in Nuget:
   <package id="Modernizr" version="2.8.3" targetFramework="net48" />
   <package id="Newtonsoft.Json" version="13.0.3" targetFramework="net48" />
   <package id="WebGrease" version="1.6.0" targetFramework="net48" />
+
+Unzip the packages.zip into the project folder
