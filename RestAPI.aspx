@@ -46,7 +46,7 @@
             var chart = new google.visualization.LineChart(document.getElementById('<%=line_chart_div.ClientID%>'));
             chart.draw(data, options);
         }
-  </script>
+    </script>
     <style>
         .stats h3, .stats b {
             color: #4f4ff3;
@@ -105,7 +105,7 @@
                     <input type="date" runat="server" class="form-control" id="inputEndDate" name="endDate">
                 </div>
                 <div class="form-group">
-                    <label for="priceClass">Prisklass:</label><a style="margin-left: 10px;" href="#" onclick="openDialog('#myModal'); return false;">Hämta</a>
+                    <label for="priceClass">Prisklass:</label><a style="margin-left: 10px;" href="#" onclick="openDialog('#myModal'); return false;"><i class="fa fa-map-marker"></i>Hämta</a>
                     <asp:DropDownList ID="ddlPriceClass" runat="server" CssClass="form-control dropdown">
                         <asp:ListItem Value="">Ange prisklass</asp:ListItem>
                         <asp:ListItem Value="SE1">SE1 - Luleå / Norra Sverige</asp:ListItem>
@@ -116,7 +116,7 @@
                 </div>
                 <div class="form-group mt-2">
                     <asp:Button ID="btnGenerateAPICalls" CssClass="btn btn-secondary" runat="server" OnClick="btnGenerateAPICalls_Click" Text="Generara API anrop" />
-                    <asp:Button ID="btnExecute" CssClass="btn btn-primary" runat="server" OnClick="btnExecute_Click" Text="Anrop API" />
+                    <asp:Button ID="btnExecute" CssClass="btn btn-primary" runat="server" OnClick="btnExecute_Click" Text="Anropa API" />
                 </div>
             </section>
             <section class="col-md-3" aria-labelledby="librariesTitle">
@@ -133,7 +133,7 @@
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeDialog('#myModal'); return false">&times;</span>
-            <h2>Koordinater</h2>
+            <h2><i class="fa fa-map-marker"></i>Koordinater</h2>
             <div class="form-group">
                 <label for="latitud">latitud:</label>
                 <input type="text" runat="server" class="form-control" id="inputLatitud" value="">
