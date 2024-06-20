@@ -1,5 +1,7 @@
 It's a web application that could be runned from local IIS host.
-Dependencies, you can find them in Nuget:
+Unzip the packages.zip into the project folder.
+
+Dependencies either you unzip the packages.zip file or can find them in Nuget:
   <package id="Antlr" version="3.5.0.2" targetFramework="net48" />
   <package id="bootstrap" version="5.2.3" targetFramework="net48" />
   <package id="jQuery" version="3.7.0" targetFramework="net48" />
@@ -17,5 +19,3 @@ Dependencies, you can find them in Nuget:
   <package id="Modernizr" version="2.8.3" targetFramework="net48" />
   <package id="Newtonsoft.Json" version="13.0.3" targetFramework="net48" />
   <package id="WebGrease" version="1.6.0" targetFramework="net48" />
-
-Unzip the packages.zip into the project folder
